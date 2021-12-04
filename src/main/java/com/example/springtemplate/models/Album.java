@@ -14,6 +14,9 @@ public class Album {
     private Integer id;
     private String title;
     private Date releaseDate;
+
+    @Column(columnDefinition = "ENUM('INDIE`, 'COUNTRY`, 'ROCK`, 'RAP`, 'CLASSICAL`, 'POP`)")
+    @Enumerated(EnumType.STRING)
     private Genre genre;
 
     @ManyToOne
