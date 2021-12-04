@@ -22,44 +22,24 @@ const AlbumFormEditor = () => {
                 <h2>Album Editor</h2>
                 <label>ID</label>
                 <input value={album.id}/><br/>
-                <label>First Name</label>
+                <label>Title</label>
                 <input
                     onChange={(e) =>
                         setAlbum(album =>
-                            ({...album, firstName: e.target.value}))}
-                    value={album.firstName}/>
-                <label>Last Name</label>
+                            ({...album, title: e.target.value}))}
+                    value={album.title}/>
+                <label>Release Date</label>
                 <input
                     onChange={(e) =>
                         setAlbum(album =>
-                            ({...album, lastName: e.target.value}))}
-                    value={album.lastName}/>
-                <label>Username</label>
+                            ({...album, releaseDate: e.target.value}))}
+                    value={album.releaseDate}/>
+                <label>Genre</label>
                 <input
                     onChange={(e) =>
                         setAlbum(album =>
-                            ({...album, username: e.target.value}))}
-                    value={album.username}/>
-                <label>Password</label>
-                <input
-                    onChange={(e) =>
-                        setAlbum(album =>
-                            ({...album, password: e.target.value}))}
-                    value={album.password}/>
-
-                <label>Email</label>
-                <input
-                    onChange={(e) =>
-                        setAlbum(album =>
-                            ({...album, email: e.target.value}))}
-                    value={album.email}/>
-
-                <label>Date of Birth</label>
-                <input
-                    onChange={(e) =>
-                        setAlbum(album =>
-                            ({...album, dateOfBirth: e.target.value}))}
-                    value={album.dateOfBirth}/>
+                            ({...album, genre: e.target.value}))}
+                    value={album.genre}/>
 
                 <button
                     onClick={() => {

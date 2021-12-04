@@ -40,7 +40,7 @@ CREATE TABLE `singers` (
 
 LOCK TABLES `singers` WRITE;
 /*!40000 ALTER TABLE `singers` DISABLE KEYS */;
-INSERT INTO `singers` VALUES (1,'Theo','Katzman','katzman','vulfpeck','tk@gmail.com','1986-04-01 00:00:00'),(2,'Taylor','Swift','cat-lover-13','meredith','ts@gmail.com','1989-12-13 00:00:00'),(3,'Elton','John','elton','crocodile','ej@gmail.com','1947-03-25 00:00:00'),(4,'Doja','Cat','cow','moo','dc@gmail.com','1995-10-21 00:00:00');
+INSERT INTO `singers` VALUES (1,'Theo','Katzman','katzman','vulfpeck','tkatz@gmail.com','1986-03-31 00:00:00'),(2,'Taylor','Swift','cat-lover-13','meredith','ts@gmail.com','1989-12-13 00:00:00'),(3,'Elton','John','elton','crocodile','ej@gmail.com','1947-03-25 00:00:00'),(4,'Doja','Cat','cow','moo','dc@gmail.com','1995-10-21 00:00:00');
 /*!40000 ALTER TABLE `singers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-03 10:47:18
+-- Dump completed on 2021-12-04 15:19:49

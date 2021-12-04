@@ -25,8 +25,7 @@ const SongList = () => {
                             key={song.id}>
                             <Link to={`/songs/${song.id}`}>
                                 {song.title},
-                                {song.numberOfPlays},
-                                {song.album}
+                                {song.numberOfPlays}
                             </Link>
                         </li>)
                 }
