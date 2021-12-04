@@ -14,7 +14,7 @@ const AlbumList = () => {
     const history = useHistory()
     return(
         <div>
-            <h2>albums</h2>
+            <h2>Albums</h2>
             <button className="btn btn-primary" onClick={() => history.push("/albums/new")}>
                 Add album
             </button>
