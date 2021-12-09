@@ -27,13 +27,10 @@ CREATE TABLE `albums` (
   `title` varchar(45) DEFAULT NULL,
   `release_date` datetime DEFAULT NULL,
   `genre` enum('COUNTRY','ROCK','POP','INDIE','CLASSICAL','RAP') DEFAULT NULL,
-  `singer` int DEFAULT NULL,
   `singer_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `albums_to_singer_idx` (`singer`),
-  KEY `FKncjy4djggwldadf3ywmowwr2j` (`singer_id`),
-  CONSTRAINT `albums_to_singer` FOREIGN KEY (`singer`) REFERENCES `singers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FKncjy4djggwldadf3ywmowwr2j` FOREIGN KEY (`singer_id`) REFERENCES `singers` (`id`)
+  KEY `albums_to_singer` (`singer_id`),
+  CONSTRAINT `albums_to_singer` FOREIGN KEY (`singer_id`) REFERENCES `singers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -43,7 +40,7 @@ CREATE TABLE `albums` (
 
 LOCK TABLES `albums` WRITE;
 /*!40000 ALTER TABLE `albums` DISABLE KEYS */;
-INSERT INTO `albums` VALUES (1,'Heartbreak Hits','2017-01-06 00:00:00','INDIE',1,NULL),(2,'Fearless','2008-11-11 00:00:00','COUNTRY',2,NULL),(3,'Rock of the Westies','1975-10-24 00:00:00','ROCK',3,NULL),(4,'Planet Her','2021-06-25 00:00:00','RAP',4,NULL);
+INSERT INTO `albums` VALUES (1,'Heartbreak Hits','2017-01-06 00:00:00','INDIE',1),(2,'Fearless','2008-11-11 00:00:00','COUNTRY',2),(3,'Rock of the Westies','1975-10-24 00:00:00','ROCK',3),(4,'Planet Her','2021-06-25 00:00:00','RAP',4);
 /*!40000 ALTER TABLE `albums` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-04 15:19:49
+-- Dump completed on 2021-12-09 17:50:13

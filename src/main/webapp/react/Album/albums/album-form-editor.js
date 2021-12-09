@@ -74,18 +74,18 @@ const AlbumFormEditor = () => {
                         songs.map(song =>
                             <li className="list-group-item"
                                 key={song.id}>
-                                <Link to={`/songs/${song.id}`}>
+                               <a href={`/cs3200-final-project/db-design-orm-assignment-master/src/main/webapp/react/Song/index.html?#/songs/${song.id}`}>
                                     {song.title}
-                                </Link>
+                                </a>
                             </li>)
                     }
                 </ul>
 
                 <br />
                 <h3>Singer</h3>
-                <Link to={`/singers/${singer.id}`}>
+                <a href={`/cs3200-final-project/db-design-orm-assignment-master/src/main/webapp/react/Singer/index.html?#/singers/${singer.id}`}>
                     {singer.firstName}
-                </Link>
+                </a>
         </div>
     )
 }

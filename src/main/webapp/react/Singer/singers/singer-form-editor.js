@@ -90,9 +90,10 @@ const SingerFormEditor = () => {
                         albums.map(album =>
                             <li className="list-group-item"
                                 key={album.id}>
-                                <Link to={`/albums/${album.id}`}>
-                                   {album.title},
-                               </Link>
+
+                               <a href={`/cs3200-final-project/db-design-orm-assignment-master/src/main/webapp/react/Album/index.html?#/albums/${album.id}`}>
+                                {album.title}
+                               </a>
                             </li>)
                     }
                 </ul>

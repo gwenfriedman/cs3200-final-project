@@ -60,9 +60,9 @@ const SongFormEditor = () => {
 
                 <br />
                 <h3>Album</h3>
-                <button className="btn btn-primary" onClick={() => history.replace(`/albums/${album.id}`)}>
+                <a href={`/cs3200-final-project/db-design-orm-assignment-master/src/main/webapp/react/Album/index.html?#/albums/${album.id}`}>
                     {album.title}
-                </button>
+                </a>
         </div>
     )
 }

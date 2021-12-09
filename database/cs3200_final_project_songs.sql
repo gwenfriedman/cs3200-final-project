@@ -24,15 +24,12 @@ DROP TABLE IF EXISTS `songs`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `songs` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `album` int DEFAULT NULL,
   `title` varchar(45) DEFAULT NULL,
   `number_of_plays` int DEFAULT NULL,
   `album_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `songs_to_album_idx` (`album`),
-  KEY `FKte4gkb2cqtk2erfa87oopj2cj` (`album_id`),
-  CONSTRAINT `FKte4gkb2cqtk2erfa87oopj2cj` FOREIGN KEY (`album_id`) REFERENCES `albums` (`id`),
-  CONSTRAINT `songs_to_album` FOREIGN KEY (`album`) REFERENCES `albums` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `songs_to_album` (`album_id`),
+  CONSTRAINT `songs_to_album` FOREIGN KEY (`album_id`) REFERENCES `albums` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -42,7 +39,7 @@ CREATE TABLE `songs` (
 
 LOCK TABLES `songs` WRITE;
 /*!40000 ALTER TABLE `songs` DISABLE KEYS */;
-INSERT INTO `songs` VALUES (1,1,'Hard Work',2647680,NULL),(2,1,'Love is a Beautiful Thing',1795446,NULL),(3,1,'Good to be Alone',2722953,NULL),(4,2,'You Belong With Me',341764411,NULL),(5,2,'Love Story',504279153,NULL),(6,2,'Forever & Always',40224451,NULL),(7,3,'Don\'t Go Breaking My Heart',433586349,NULL),(8,3,'Island Girl',7688650,NULL),(9,3,'Feed Me',237402,NULL),(10,4,'Woman',403029360,NULL),(11,4,'Kiss Me More',861852468,NULL),(12,4,'Need to Know',434627049,NULL);
+INSERT INTO `songs` VALUES (1,'Hard Work',2647680,1),(2,'Love is a Beautiful Thing',1795446,1),(3,'Good to be Alone',2722953,1),(4,'You Belong With Me',341764411,2),(5,'Love Story',504279153,2),(6,'Forever & Always',40224451,2),(7,'Don\'t Go Breaking My Heart',433586349,3),(8,'Island Girl',7688650,3),(9,'Feed Me',237402,3),(10,'Woman',403029360,4),(11,'Kiss Me More',861852468,4),(12,'Need to Know',434627049,4);
 /*!40000 ALTER TABLE `songs` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-04 15:19:49
+-- Dump completed on 2021-12-09 17:50:13
