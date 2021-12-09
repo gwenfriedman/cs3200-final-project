@@ -6,7 +6,7 @@
 
 **Team members** - Gwendolyn Friedman and Gal Nissan, Section 04  
 
-**Problem description** - Nowadays, singers have many songs and albums that they have written, oftentimes in various genres. It can be hard for singers to keep track of all of the songs they have written, as well as what album each of their songs is on, and how many plays each of their songs has. Furthermore, they need to know when each of their albums was released and what genre each album was. This is a lot of information to keep track of, especially for artists with hundreds of songs and over a dozen albums. Our database solves this issue by providing singers a list of all of their music, including number of plays per song.  
+**Project description** - Nowadays, singers have many songs and albums that they have written, oftentimes in various genres. It can be hard for singers to keep track of all of the songs they have written, as well as what album each of their songs is on, and how many plays each of their songs has. Furthermore, they need to know when each of their albums was released and what genre each album was. This is a lot of information to keep track of, especially for artists with hundreds of songs and over a dozen albums. Our database solves this issue by providing singers a list of all of their music, including number of plays per song.  
 
 **UML diagram** - [db_design_final_project_UML.pdf](https://github.com/gwenfriedman/cs3200-final-project/files/7687398/db_design_final_project_UML.pdf)  
 
