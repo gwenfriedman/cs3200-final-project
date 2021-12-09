@@ -67,10 +67,16 @@ public class Album {
         this.genre = genre;
     }
 
-    public Album(String title, Date releaseDate, Genre genre) {
+    public Singer getSinger() {
+        return this.singer;
+    }
+
+    public Album(String title, Date releaseDate, Genre genre, Singer singer, List<Song> songs) {
         this.title = title;
         this.releaseDate = releaseDate;
         this.genre = genre;
+        this.singer = singer;
+        this.songs = songs;
     }
 
     public Album() {}

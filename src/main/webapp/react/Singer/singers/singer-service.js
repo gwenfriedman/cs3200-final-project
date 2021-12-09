@@ -35,11 +35,16 @@ export const updateSinger = (id, singer) =>
     })
         .then(response => response.json())
 
+// retrieve a the list of albums for a given singer
+export const getAlbums = (id) => {
+    return fetch(`${SINGERS_URL}/${id}/albums`).then(response => response.json())
+}
 
 export default {
     findAllSingers,
     findSingerById,
     deleteSinger,
     createSinger,
-    updateSinger
+    updateSinger,
+    getAlbums
 }

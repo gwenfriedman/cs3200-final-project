@@ -35,11 +35,16 @@ export const updateSong = (id, song) =>
     })
         .then(response => response.json())
 
+// retrieve the song's album
+export const findAlbum = (id) => {
+    return fetch(`${SONGS_URL}/${id}/album`).then(response => response.json())
+}
 
 export default {
     findAllSongs,
     findSongById,
     deleteSong,
     createSong,
-    updateSong
+    updateSong,
+    findAlbum
 }

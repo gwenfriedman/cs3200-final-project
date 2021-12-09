@@ -1,6 +1,7 @@
 package com.example.springtemplate.daos;
 
 import com.example.springtemplate.models.Song;
+import com.example.springtemplate.models.Album;
 import com.example.springtemplate.repositories.SongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -43,5 +44,11 @@ public class SongDao {
     public void deleteSong(
             @PathVariable("songId") Integer id) {
         songRepository.deleteById(id);
+    }
+
+    @GetMapping("/api/songs/{songId}/album")
+    public Album findAlbum(
+        @PathVariable("songId") Integer id){
+            return (Album) findSongById(id).getAlbum();
     }
 }

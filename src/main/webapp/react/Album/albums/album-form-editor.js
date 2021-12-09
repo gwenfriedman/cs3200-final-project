@@ -3,10 +3,12 @@ const {useState, useEffect} = React;
 const {useParams, useHistory} = window.ReactRouterDOM;
 const AlbumFormEditor = () => {
         const {id} = useParams()
-        const [album, setAlbum] = useState({})
+        const [album, setAlbum, singer, setSinger, songs, setSongs] = useState({})
         useEffect(() => {
                 if(id !== "new") {
                         findAlbumById(id)
+                        findSinger(id)
+                        findSongs(id)
                 }
         }, []);
         const findAlbumById = (id) =>
@@ -17,6 +19,10 @@ const AlbumFormEditor = () => {
             albumService.createAlbum(album).then(() => history.back())
         const updateAlbum = (id, newAlbum) =>
             albumService.updateAlbum(id, newAlbum).then(() => history.back())
+        const findSinger = (id) =>
+            albumService.findSinger(id).then(singer => setSinger(singer))
+        const findSongs = (id) =>
+            albumService.findSongs(id).then(songs => setSongs(songs))
         return (
         <div>
                 <h2>Album Editor</h2>
@@ -58,6 +64,16 @@ const AlbumFormEditor = () => {
                     onClick={() => updateAlbum(album.id, album)}>
                         Save
                 </button>
+
+                <br />
+                <h3>Songs</h3>
+                {songs && songs.map(function(item, i){
+                  return <li key={i}>Test</li>
+                })}
+
+                <br />
+                <h3>Singer</h3>
+                <a> {singer} </a>
         </div>
     )
 }

@@ -3,10 +3,11 @@ const {useState, useEffect} = React;
 const {useParams, useHistory} = window.ReactRouterDOM;
 const SongFormEditor = () => {
         const {id} = useParams()
-        const [song, setSong] = useState({})
+        const [song, setSong, album, setAlbum] = useState({})
         useEffect(() => {
                 if(id !== "new") {
                         findSongById(id)
+                        findAlbum(id)
                 }
         }, []);
         const findSongById = (id) =>
@@ -17,6 +18,8 @@ const SongFormEditor = () => {
             songService.createSong(song).then(() => history.back())
         const updateSong = (id, newSong) =>
             songService.updateSong(id, newSong).then(() => history.back())
+        const findAlbum = (id) =>
+             songService.findAlbum(id).then(album => setAlbum(album))
         return (
         <div>
                 <h2>Song Editor</h2>
@@ -52,6 +55,10 @@ const SongFormEditor = () => {
                     onClick={() => updateSong(song.id, song)}>
                         Save
                 </button>
+
+                <br />
+                <h3>Album</h3>
+                <a> {album} </a>
         </div>
     )
 }
