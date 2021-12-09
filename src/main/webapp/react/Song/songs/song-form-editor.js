@@ -1,6 +1,6 @@
 import songService from "./song-service"
 const {useState, useEffect} = React;
-const {useParams, useHistory} = window.ReactRouterDOM;
+const {useParams, useHistory, Link} = window.ReactRouterDOM;
 const SongFormEditor = () => {
         const {id} = useParams()
         const [song, setSong] = useState({})
@@ -21,6 +21,7 @@ const SongFormEditor = () => {
             songService.updateSong(id, newSong).then(() => history.back())
         const findAlbum = (id) =>
              songService.findAlbum(id).then(album => setAlbum(album))
+        const history = useHistory()
         return (
         <div>
                 <h2>Song Editor</h2>
@@ -59,7 +60,9 @@ const SongFormEditor = () => {
 
                 <br />
                 <h3>Album</h3>
-                <a> {album} </a>
+                <button className="btn btn-primary" onClick={() => history.replace(`/albums/${album.id}`)}>
+                    {album.title}
+                </button>
         </div>
     )
 }

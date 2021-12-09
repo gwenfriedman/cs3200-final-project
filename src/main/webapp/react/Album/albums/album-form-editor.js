@@ -1,6 +1,6 @@
 import albumService from "./album-service"
 const {useState, useEffect} = React;
-const {useParams, useHistory} = window.ReactRouterDOM;
+const {useParams, useHistory, Link} = window.ReactRouterDOM;
 const AlbumFormEditor = () => {
         const {id} = useParams()
         const [album, setAlbum] = useState({})
@@ -69,13 +69,23 @@ const AlbumFormEditor = () => {
 
                 <br />
                 <h3>Songs</h3>
-                {songs && songs.map(function(item, i){
-                  return <li key={i}>Test</li>
-                })}
+                <ul className="list-group">
+                    {
+                        songs.map(song =>
+                            <li className="list-group-item"
+                                key={song.id}>
+                                <Link to={`/songs/${song.id}`}>
+                                    {song.title}
+                                </Link>
+                            </li>)
+                    }
+                </ul>
 
                 <br />
                 <h3>Singer</h3>
-                <a> {singer} </a>
+                <Link to={`/singers/${singer.id}`}>
+                    {singer.firstName}
+                </Link>
         </div>
     )
 }

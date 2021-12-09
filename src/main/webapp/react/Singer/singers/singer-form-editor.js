@@ -1,6 +1,6 @@
 import singerService from "./singer-service"
 const {useState, useEffect} = React;
-const {useParams, useHistory} = window.ReactRouterDOM;
+const {useParams, useHistory, Link} = window.ReactRouterDOM;
 const SingerFormEditor = () => {
         const {id} = useParams()
         const [singer, setSinger] = useState({})
@@ -85,9 +85,17 @@ const SingerFormEditor = () => {
 
                 <br />
                 <h3>Albums</h3>
-                {albums && albums.map(function(item, i){
-                  return <li key={i}>Test</li>
-                })}
+                <ul className="list-group">
+                    {
+                        albums.map(album =>
+                            <li className="list-group-item"
+                                key={album.id}>
+                                <Link to={`/albums/${album.id}`}>
+                                   {album.title},
+                               </Link>
+                            </li>)
+                    }
+                </ul>
         </div>
     )
 }

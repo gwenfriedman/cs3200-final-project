@@ -53,6 +53,9 @@ public class SingerDao {
 
     @GetMapping("/api/singers/{singerId}/albums")
     public List<Album> findAllAlbums( @PathVariable("singerId") Integer id) {
-        return (List<Album>) findSingerById(id).getAlbums();
+//        return (List<Album>) findSingerById(id).getAlbums();
+
+        return singerRepository.findById(id).get()
+                .getAlbums();
     }
 }
