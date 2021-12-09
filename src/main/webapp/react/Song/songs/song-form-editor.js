@@ -3,7 +3,8 @@ const {useState, useEffect} = React;
 const {useParams, useHistory} = window.ReactRouterDOM;
 const SongFormEditor = () => {
         const {id} = useParams()
-        const [song, setSong, album, setAlbum] = useState({})
+        const [song, setSong] = useState({})
+        const [album, setAlbum] = useState([])
         useEffect(() => {
                 if(id !== "new") {
                         findSongById(id)
