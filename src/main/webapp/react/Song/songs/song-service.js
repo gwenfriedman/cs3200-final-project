@@ -40,11 +40,17 @@ export const findAlbum = (id) => {
     return fetch(`${SONGS_URL}/${id}/album`).then(response => response.json())
 }
 
+// retrieve the album for the given id
+export const findAlbumById = (id) => {
+    return fetch(`http://localhost:8080/api/albums/${id}`).then(response => response.json())
+}
+
 export default {
     findAllSongs,
     findSongById,
     deleteSong,
     createSong,
     updateSong,
-    findAlbum
+    findAlbum,
+    findAlbumById
 }

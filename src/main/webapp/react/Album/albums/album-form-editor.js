@@ -19,12 +19,14 @@ const AlbumFormEditor = () => {
             albumService.deleteAlbum(id).then(() => history.back())
         const createAlbum = (album) =>
             albumService.createAlbum(album).then(() => history.back())
-        const updateAlbum = (id, newAlbum) =>
+        const updateAlbum = (id, newAlbum, newSinger) =>
             albumService.updateAlbum(id, newAlbum).then(() => history.back())
         const findSinger = (id) =>
             albumService.findSinger(id).then(singer => setSinger(singer))
         const findSongs = (id) =>
             albumService.findSongs(id).then(songs => setSongs(songs))
+        const findSingerById = (id) =>
+            albumService.findSingerById(id).then(singer => setSinger(singer))
         return (
         <div>
                 <h2>Album Editor</h2>
@@ -49,6 +51,13 @@ const AlbumFormEditor = () => {
                             ({...album, genre: e.target.value}))}
                     value={album.genre}/>
 
+                <label>Singer</label>
+                <input
+                    onChange={(e) =>
+                        setAlbum(album =>
+                            ({...album, singer: findSingerById(e.target.value)}))}
+                    value={album.singer ? album.singer.id : 0}/>
+
                 <button
                     onClick={() => {
                             history.back()}}>
@@ -59,11 +68,11 @@ const AlbumFormEditor = () => {
                         Delete
                 </button>
                 <button
-                    onClick={() => createAlbum(album)}>
+                    onClick={() => createAlbum({...album, singer: singer})}>
                         Create
                 </button>
                 <button
-                    onClick={() => updateAlbum(album.id, album)}>
+                    onClick={() => updateAlbum(album.id, {...album, singer: singer})}>
                         Save
                 </button>
 
@@ -84,7 +93,7 @@ const AlbumFormEditor = () => {
                 <br />
                 <h3>Singer</h3>
                 <a href={`/cs3200-final-project/db-design-orm-assignment-master/src/main/webapp/react/Singer/index.html?#/singers/${singer.id}`}>
-                    {singer.firstName}
+                    {singer.firstName} {singer.lastName}
                 </a>
         </div>
     )

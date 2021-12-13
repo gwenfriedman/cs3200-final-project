@@ -14,7 +14,6 @@ public class Song {
     private Integer numberOfPlays;
 
     @ManyToOne
-    @JsonIgnore
     private Album album;
 
     public Integer getId() {

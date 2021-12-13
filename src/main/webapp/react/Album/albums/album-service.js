@@ -45,6 +45,11 @@ export const findSongs = (id) => {
     return fetch(`${ALBUMS_URL}/${id}/songs`).then(response => response.json())
 }
 
+// retrieve the album's singer
+export const findSingerById = (id) => {
+    return fetch(`http://localhost:8080/api/singers/${id}`).then(response => response.json())
+}
+
 export default {
     findAllAlbums,
     findAlbumById,
@@ -52,5 +57,6 @@ export default {
     createAlbum,
     updateAlbum,
     findSinger,
-    findSongs
+    findSongs,
+    findSingerById
 }

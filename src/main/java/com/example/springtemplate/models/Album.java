@@ -20,7 +20,6 @@ public class Album {
     private Genre genre;
 
     @ManyToOne
-    @JsonIgnore
     private Singer singer;
 
     @OneToMany(mappedBy = "album")
@@ -69,6 +68,10 @@ public class Album {
 
     public Singer getSinger() {
         return this.singer;
+    }
+
+    public void setSinger(Singer singer) {
+        this.singer = singer;
     }
 
     public Album(String title, Date releaseDate, Genre genre, Singer singer, List<Song> songs) {

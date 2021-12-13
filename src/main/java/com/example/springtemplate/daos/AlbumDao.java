@@ -39,6 +39,7 @@ public class AlbumDao {
         album.setGenre(newAlbum.getGenre());
         album.setReleaseDate(newAlbum.getReleaseDate());
         album.setSongs(newAlbum.getSongs());
+        album.setSinger(newAlbum.getSinger());
 
         return albumRepository.save(album);
     }

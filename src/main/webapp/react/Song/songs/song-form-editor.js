@@ -11,6 +11,9 @@ const SongFormEditor = () => {
                         findAlbum(id)
                 }
         }, []);
+
+        const history = useHistory()
+
         const findSongById = (id) =>
             songService.findSongById(id).then(song => setSong(song))
         const deleteSong = (id) =>
@@ -21,7 +24,8 @@ const SongFormEditor = () => {
             songService.updateSong(id, newSong).then(() => history.back())
         const findAlbum = (id) =>
              songService.findAlbum(id).then(album => setAlbum(album))
-        const history = useHistory()
+        const findAlbumById = (id) =>
+            songService.findAlbumById(id).then(album => setAlbum(album))
         return (
         <div>
                 <h2>Song Editor</h2>
@@ -40,6 +44,13 @@ const SongFormEditor = () => {
                             ({...song, numberOfPlays: e.target.value}))}
                     value={song.numberOfPlays}/>
 
+                <label>Album</label>
+                    <input
+                        onChange={(e) =>
+                            setSong(song =>
+                                ({...song, album: findAlbumById(e.target.value)}))}
+                        value={song.album ? song.album.id : 0}/>
+
                 <button
                     onClick={() => {
                             history.back()}}>
@@ -50,11 +61,11 @@ const SongFormEditor = () => {
                         Delete
                 </button>
                 <button
-                    onClick={() => createSong(song)}>
+                    onClick={() => createSong({...song, album: album})}>
                         Create
                 </button>
                 <button
-                    onClick={() => updateSong(song.id, song)}>
+                    onClick={() => updateSong(song.id, {...song, album: album})}>
                         Save
                 </button>
 
