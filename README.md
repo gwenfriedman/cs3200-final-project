@@ -6,17 +6,15 @@
 
 **Team members** - Gwendolyn Friedman and Gal Nissan, Section 04  
 
-**Project description** - Nowadays, singers have many songs and albums that they have written, oftentimes in various genres. It can be hard for singers to keep track of all of the songs they have written, as well as what album each of their songs is on, and how many plays each of their songs has. Furthermore, they need to know when each of their albums was released and what genre each album was. This is a lot of information to keep track of, especially for artists with hundreds of songs and over a dozen albums. Our database solves this issue by providing singers a list of all of their music, including number of plays per song.  
+**Problem statement** - Nowadays, singers have many songs and albums that they have written, oftentimes in various genres. It can be hard for singers to keep track of all of the songs they have written, as well as what album each of their songs is on, and how many plays each of their songs has. It is valuable to know the number of plays of a song, because it signifies how popular a song is among the fans. Then, the singer knows what kinds of songs to release in the future if they want to become more popular. Furthermore, they need to know when each of their albums was released and what genre each album was. This is a lot of information to keep track of, especially for artists with hundreds of songs and over a dozen albums.  
+
+**Solution statement** - Our project solves this issue by providing singers a database with all of their albums and songs listed. For each album, they are able to see the title of the album, the release date, the genre, and the list of songs on the album. For each song, they are able to see the title of the song and the number of plays it has.  
 
 **UML diagram** - [db_design_final_project_UML.pdf](https://github.com/gwenfriedman/cs3200-final-project/files/7687398/db_design_final_project_UML.pdf)  
 
-**User** - A typical user on our platform would be a singer/songwriter who would like to keep track of all of the music they have released, and how well their music is doing on streaming services such as Spotify. A singer has a first name, last name, username, password, email, a date of birth, and a list of albums.  
+**User** - A typical user on our platform would be a singer who would like to keep track of all of the music they have released, and how well their music is doing on streaming services such as Spotify. A singer has a first name, last name, username, password, email, a date of birth, and a list of albums.  
 
-**Domain objects** - Our two domain objects are songs and albums. Songs have a title and a number of plays. Albums have a title, a release date, a genre, and a list of songs.  
-
-**User to domain relationship** - In our data model, there is a one to many relationship between singers and albums. A singer can have many albums, but an album is only sung by one singer.  
-
-**Domain to domain relationship** - In our data model, there is a one to many relationship between albums and songs. An album can have many songs, but a song is only listed on one album.  
+**Domain objects** - Our two domain objects are songs and albums. Songs have a title and a number of plays. Albums have a title, a release date, a genre, and a list of songs. In our data model, there is a one to many relationship between singers and albums. A singer can have many albums, but an album is only sung by one singer. Additionally, there is a one to many relationship between albums and songs. An album can have many songs, but a song is only listed on one album.  
 
 **Enumeration** - Our enumeration is genre. An album can be one of the following genres: country, rock, pop, indie, classical, rap.  
 
