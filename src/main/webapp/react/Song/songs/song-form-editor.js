@@ -12,8 +12,6 @@ const SongFormEditor = () => {
                 }
         }, []);
 
-        const history = useHistory()
-
         const findSongById = (id) =>
             songService.findSongById(id).then(song => setSong(song))
         const deleteSong = (id) =>
